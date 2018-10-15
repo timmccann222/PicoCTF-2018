@@ -1,0 +1,9 @@
+In this challenge I am given an address to netcat to. The title and hint for the challenge suggest I use piping which
+I discussed and have used in some of the previous write-ups ( see: GREP 1).
+
+I type the command to netcat to the address as we would normally and then pipe the output from that command to my grep
+command as shown:
+
+ $nc 2018shell3.picoctf.com 37542 | grep pico
+
+The flag i got was: picoCTF{almost_like_mario_a6975cdb}

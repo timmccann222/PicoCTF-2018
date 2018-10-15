@@ -1,0 +1,11 @@
+I am given a executable file and asked to find the flag without running it. The title and hint suggests to us to use the strings
+command. Strings is a program in Unix-like operating systems that finds and prints text strings embedded in binary files
+such as executables.
+
+I use the strings command to print out all the text in the file and then pipe it into grep to find the flag:
+
+ $strings strings | grep pico
+
+
+This is the flag I got: picoCTF{sTrIngS_sAVeS_Time_3f712a28}
+

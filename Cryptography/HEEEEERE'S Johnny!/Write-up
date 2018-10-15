@@ -1,0 +1,60 @@
+I am given the address 2018shell3.picoctf.com 5221 to netcat. I am also given two files, one named passwd and another
+named shadow. The title of the challenge refers to a tool called John The Ripper which is a password cracker. In the
+hints I am also given a hint that if you're not careful these kind of problems can really "rockyou", which is a
+reference to the rockyou.txt file. This is a popular wordlist/dictionary designed for cracking passwords.
+
+When I netcat to the provided address, I am presented with a login that require a username and password. In order to
+find these credentials I have to use the files given to me in the challenge.
+
+The first file is a passwd. The passwd file is a human-readable text file which stores information of user account. Each
+field is separated with a : . When we cat the passwd file we get the following content:
+
+    root:x:0:0:root:/root:/bin/bash
+
+root : username#
+
+x : encrypted password
+
+0 : user id
+
+0 : group id
+
+root : GECOS field that is generally used to record information about the account or its user(s) such as their real name
+       and phone number.
+
+/bin/bash : denotes the full path of the default shell that executes commands (by user) and displays the results.
+
+
+From the above information we can gather that root will be the login name for the user. Now we must find the password.
+
+The shadow file password and account expiration information for users. It contains the following content:
+
+root:$6$LcvKHioa$67O1HA8Ti.KHeNbD4rE79ZMl1RbiCw4V7eM.r6AURp2wGnapUpXC.VdVB4WGoS2J5eVKP/1MFeMmXIdveJeOS0:17695:0:99999:7:::
+
+root : username
+
+$6$ : the encryption used is SHA-512
+
+L->0 : your actual hashed password
+
+17695 : days since password was changed
+
+0 : The minimum number of days required between password changes
+
+99999 : The maximum number of days the password is valid
+
+7 : The number of days before password is to expire that user is warned that his/her password must be changed
+
+In order to get the password we must first decrypt it which is why we are given the hint to use john the ripper password
+cracking tool. However, since it is encrypted using SHA-512 it could take some time for your cpu to run through all the
+possibilities. To speed this up we will use the password list rockyou.txt which can be found using the locate command
+and copied using the cp command to your current directory.
+
+Unfortunately I could not figure out how to get John The Ripper to work on the command line and so used the GUI instead.
+Simply open up the GUI and select your shadow file. Then in options select the wordlist tab and choose the rockyou.txt
+file you copied and unzipped in the directory you were working in.
+
+This is the flag i got when I logged in: picoCTF{J0hn_1$_R1pp3d_289677b5}
+
+
+

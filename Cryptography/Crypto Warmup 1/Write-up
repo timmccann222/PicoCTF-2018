@@ -6,7 +6,7 @@ I use an online tool to solve this rather than by hand:
 
 
 This tool confirms that it is a Vignère cipher. It can also be considered a Larrabee cipher which is similar to the
-Vignère cipher but with the main difference that also numbers can be encoded. Since there are no numbers in this
+Vignère cipher but with the main difference that numbers can also be encoded. Since there are no numbers in this
 ciphertext a decoder for either will work.
 
 I obtained the following flag: picoCTF{secretmessage}
