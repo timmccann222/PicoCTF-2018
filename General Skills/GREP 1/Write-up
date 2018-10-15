@@ -1,0 +1,23 @@
+I am given a file and asked to search for the flag in it. The challenge tells me that searching through the file would
+take too long and so advises me to find another way to search for the flag. The hint and title of the challenge both
+suggest that i use grep. grep is a command in linux that searches for patterns in text files that we want to find.
+
+I first navigate to the correct directory from are shell:
+
+ $cd /problems/grep-1_4_0431431e36a950543a85426d0299343e
+
+Next, I use ls and find a ASCII text file. I use cat on the file and I am given a large output:
+
+ $cat file
+
+Rather than sift through the output from the file and find the flag, I instead use the grep command and a pipe. Piping
+is a way of redirecting output from a file or program in linux and is represented with a | . Here I am redirecting the
+output I get from using cat on the file to my grep command which will search for the pattern I specified, which in this
+case will be 'pico':
+
+ $cat file | grep pico
+
+This returns the flag: picoCTF{grep_and_you_will_find_d66382d8}
+
+
+
