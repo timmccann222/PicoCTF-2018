@@ -1,0 +1,7 @@
+I am asked to convert 0x3D (base 16) to decimal (base 10).
+
+I used an online tool for this:
+
+ https://www.rapidtables.com/convert/number/hex-to-decimal.html
+
+This gave me the flag: picoCTF{61}
