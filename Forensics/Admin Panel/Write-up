@@ -1,0 +1,6 @@
+I am given a data.pcap file which holds captured network traffic. I use a tool called wireshark to open this pcap file.
+I am then presented with a number of TCP and HTTP packets. I right click on the first packet and then select follow TCP
+stream. This then presents me with html code. In the bottom right hand corner it says stream with two arrows beside it.
+Hit the up arrow and examine each new page carefully. I eventually come across the flag in the code.
+
+This is the flag: picoCTF{n0ts3cur3_9feedfbc}

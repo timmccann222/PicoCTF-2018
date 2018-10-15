@@ -1,0 +1,8 @@
+I am given an image of a husky and have to find the flag. The hint suggests to use an online decoder but I instead used
+a tool called zsteg. This a useful tool which can be installed on kali linux and used to detect stegano-hidden data in
+PNG & BMP
+
+ $zsteg husky.eog
+
+This is the flag: picoCTF{r34d1ng_b37w33n_7h3_by73s}
+

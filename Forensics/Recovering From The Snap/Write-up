@@ -1,0 +1,7 @@
+I am given a animals.dd file and asked to find the flag. For this challenge i used the tool FTK Imager from Access Data
+which is a data preview and imaging tool used to acquire data (evidence) in a forensically sound manner by creating
+copies of data without making changes to the original evidence.
+
+I add the animals.dd file to the tool as evidence and find a number of images which includes an image called the flag.
+
+The flag is: picoCTF{th3_5n4p_happ3n3d}

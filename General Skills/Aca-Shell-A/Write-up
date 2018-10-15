@@ -1,0 +1,42 @@
+I am given an address to netcat to. Once I get in I am given a series of instructions which require knowledge of basic
+linux commands. I will just go over the actual answer and not spend to much time on exploring or the process of
+searching, that is something you can do for practice if you wish :)
+
+I first cd into the secret directory:
+
+ $cd secret
+
+Next I use ls to see what is in the directory:
+
+ $ls
+
+Now i us the rm command which removes the intel_1 file as asked:
+
+ $rm intel_1
+
+I then have to type echo 'Drop it in!':
+
+ $echo 'Drop it in!'
+
+Next I go to the executables folder where there should be an executable file there for me:
+
+ $cd ..
+ $cd executables
+ $./dontLookHere
+
+Now I am asked to print the name of the user to the string which can be done with the whoami command:
+
+ $whoami
+
+I am then asked to copy a file called TopSecret from the tmp directory to the passwords directory, this must be done
+from the home directory which is denoted by the ~/ :
+
+ $ cp /tmp/TopSecret passwords/
+
+Finally, I must go to the passwords directory and read the file:
+
+ $cat TopSecret
+
+This is the flag: picoCTF{CrUsHeD_It_17ab99f5}
+
+
