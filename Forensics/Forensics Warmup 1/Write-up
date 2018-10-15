@@ -1,4 +1,4 @@
-We are given a file and asked to unzip it.
+I am given a file and asked to unzip it.
 
 I use the file command on linux to make sure it is a zip file:
 
