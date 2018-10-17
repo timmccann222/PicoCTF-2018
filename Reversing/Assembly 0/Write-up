@@ -1,0 +1,40 @@
+In this challenge I am asked to find out what asm0(0xc9,0xb0) returns. I am given the following assembly:
+
+.intel_syntax noprefix              <---- uses intel syntax and does'nt include the % prefix in front of registers.
+.bits 32                            <---- specifies what code to run based on what bit mode the processor is operating
+                                          in. In our case it is 32 bit.
+
+.global asm0                        <---- specifies the starting point of the program.
+
+asm0:                                  <---- name of the function
+	push	ebp                        <---- pushes base pointer on to the stack
+	mov	    ebp,esp                    <---- stack pointer is given the value of the base pointer
+	mov	    eax,DWORD PTR [ebp+0x8]    <---- the value 8 bytes above the register is moved into eax (0xc9)
+	mov	    ebx,DWORD PTR [ebp+0xc]    <---- the value 12 bytes above the register is moved into the ebx register (0xb0)
+	mov	    eax,ebx                    <---- the value in the ebx register is moved into the eax register
+	mov	    esp,ebp                    <---- the value in the ebx register is moved into the esp register
+	pop	    ebp                        <---- the ebp register is popped of the stack
+	ret                                <---- return to wherever the return address points
+
+The first three lines that are given above are known as assembler directives, which have names that begin with a period
+(.). The rest of the name is letters, usually in lower case.
+
+The function prologue is a few lines of code at the beginning of a function, which prepare the stack and registers for
+use within the function. Below is a typical example:
+
+    push   ebp
+    mov	 ebp, esp
+
+The function epilogue reverses the actions of the function prologue and returns control to the calling function. Below
+is a typical example:
+
+    mov	 esp, ebp
+	pop	 ebp
+	ret
+
+The prologue and epilogue are not a part of the assembly language itself; they represent a convention used by assembly
+language programmers, and compilers of many higher-level languages. They are fairly rigid, having the same form in each
+function.
+
+The function returns the second value given to it which in this particular case is 0xb0. This is my flag: 0xb0
+

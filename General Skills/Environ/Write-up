@@ -1,0 +1,9 @@
+In this challenge I am asked to find a flag hidden in a environment variable. An environment variable is a dynamic-named
+value that can affect the way running processes will behave on a computer. They are part of the environment in which a
+process runs.
+
+To view environment variables on linux is use the following command:
+
+ $printenv
+
+I scroll to the top and find the flag: picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
