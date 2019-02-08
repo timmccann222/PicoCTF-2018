@@ -1,0 +1,51 @@
+In this challenge I am asked to add my own public key to ~/.ssh/authorized_keys, using the webshell.
+
+First check if you have any existing keys on your local computer. Open a terminal and run the following:
+
+ $cd ~/.ssh
+
+If you see "No such file or directory, then there aren't any existing keys. You might find that there is no .ssh
+directory in which case you can make one using mkdir and then cd into it from your home directory.
+
+Check to see if you have a key already:
+
+ $ls id_*
+
+If there are existing keys, you may want to use them.
+
+If you don't have an existing SSH key that you wish to use, generate one as follows. Open a terminal and enter the
+following:
+
+ $ssh-keygen -t rsa -C "your_email@example.com"
+
+You will then br prompted for a passphrase. The output for the passphrase will be invisible. Once done you can ls and
+find a id_rsa and id_rsa.pub . Never share your id_rsa private key with anyone ever!!! Next cat out your public
+id_rsa.pub key and copy and paste.
+
+Next go to the webshell and open the ssh directory. If it does'nt exist than simply use mkdir to make one.
+
+ $cd .ssh
+
+Next we can use nano to create an authorized_keys file.
+
+ $nano authorized.keys
+
+Now we can paste our public id_rsa.pub key into our authorized.keys file. Type ctrl+o to save and ctrl+x to exit.
+
+Now we can ssh into picoCTF. Make sure when typing in the command below you use your username that you setup for
+picoCTF:
+
+ $ssh -i ~/.ssh/id_rsa PlayerTwo@2018shell3.picoctf.com
+
+I get in and the flag is: picoCTF{who_n33ds_p4ssw0rds_38dj21}
+
+***To save you typing out the above command every time you want to ssh into picoCTF you can create a simple bash script
+which will have that one command. Using nano type shell.sh then enter. Copy and paste the ssh command above into the
+script, ctrl+o to save and ctrl+x to exit. Now use the chmod command to make it executable:
+
+ $chmod +x shell.sh
+
+Now you can run this script anytime you want to ssh just by typing the following:
+
+ $./shell.sh
+

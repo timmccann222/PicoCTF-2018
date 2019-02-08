@@ -1,0 +1,48 @@
+I am asked what asm1(0xcd) returns and submit the flag as a hexadecimal value. I am not going to explain what certain
+commands do as I have already covered those in the Assembly 0 challenge. I am given the following assembly to
+work with:
+
+.intel_syntax noprefix
+.bits 32
+
+.global asm1
+
+asm1:
+	push	ebp
+	mov	    ebp,esp
+	cmp	    DWORD PTR [ebp+0x8],0xde <---- compares the value at 8 bytes above the base pointer to 0xde and sets flag.
+	jg 	    part_a                   <---- if the flag is greater than 0 then we jump to part_a if not then we move down.
+	cmp	    DWORD PTR [ebp+0x8],0x8  <----compare the value to 0x8
+	jne	    part_b                   <---- jumps if not equal to, in this case that's true so we jump to part_b
+	mov	    eax,DWORD PTR [ebp+0x8]
+	add	    eax,0x3
+	jmp	    part_d
+part_a:
+	cmp	    DWORD PTR [ebp+0x8],0x4e
+	jne	    part_c
+	mov	    eax,DWORD PTR [ebp+0x8]
+	sub	    eax,0x3
+	jmp	    part_d
+part_b:
+	mov	    eax,DWORD PTR [ebp+0x8]
+	sub	    eax,0x3                  <---- subtracts 0x3 from the value in the eax register.
+	jmp	    part_d                   <---- jumps to part d
+	cmp	    DWORD PTR [ebp+0x8],0xee
+	jne	    part_c
+	mov	    eax,DWORD PTR [ebp+0x8]
+	sub	    eax,0x3
+	jmp	    part_d
+part_c:
+	mov	    eax,DWORD PTR [ebp+0x8]
+	add	    eax,0x3
+part_d:
+	pop	    ebp
+	ret
+
+So we are given 0xcd which is compared to 0xde, which is not bigger so we do not jump. We move down and compare 0xcd to
+0x8 which we know are not equal so we jump to part_b. We move the value 8 bytes above the base pointer to the eax
+register. Next we subtract 0x3 from the vaule 0xcd which is now in the eax register. Finally we jump to part_d which
+ends the program. Leaving us with the value of 0xca.
+
+This is the flag: 0xca
+
