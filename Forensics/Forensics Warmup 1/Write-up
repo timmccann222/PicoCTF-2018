@@ -1,0 +1,18 @@
+I am given a file and asked to unzip it.
+
+I use the file command on linux to make sure it is a zip file:
+
+ $file flag.zip
+
+Next I use the unzip command to unzip the file:
+
+ $unzip flag.zip
+
+Once unzipped, I am given a JPEG file. I use the eog command to view the image:
+
+ $eog flag.jpg
+
+This gives me the flag: picoCTF{welcome_to_forensics}
+
+
+

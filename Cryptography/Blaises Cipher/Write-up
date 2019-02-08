@@ -1,0 +1,24 @@
+In this challenge I am given some encrypted text and asked to decipher it. The title of the challenge indicates it is
+a Vignère cipher as it was invented by Blaise de Vigenère. The cipher works by shifting each individual letter a number
+of places based on the letters of a keyword. It is a form of polyalphabetic substitution. In order to decrypt the text
+we need akey which we do not have. All we have is the cipher text.
+
+In a normal situation it would be very difficult to decipher the hidden text without the key but in this challenge
+we can actually find the key by using the cipher text and what we know about what will be in the plaintext. I use the
+online tool below to help with this:
+
+ https://cryptii.com/pipes/vigenere-cipher
+
+First enter your encrypted text, then type two letters ab where the key is. We know that each flag starts with picoCTF
+so we can find the what the first letter in the key is by typing in b,c,d,e etc until the first letter of the plaintext
+starts with a p. We repeat the process for the second letter in the key until the second letter in the plaintext changes
+to i. You see how this works. We eventually get the key which decrypts the cipher text giving us the flag. This only
+works because we know what the start of the plaintext is, which allows us to map out the key.
+
+Another way to decrypt the key is t use the following table:
+
+ https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher#/media/File:Vigen%C3%A8re_square_shading.svg
+
+We can map the letters of the encrypted text to the plaintext since we know what the start of the flag is.
+
+The flag for me is: picoCTF{substitution_ciphers_are_too_easy_nlrgrwmynn}

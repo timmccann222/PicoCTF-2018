@@ -1,0 +1,18 @@
+I am asked to navigate to  /problems/reversing-warmup-1_2_a237211c4be8902c67102f827027e633 on the shell server and run
+a program to get the flag.
+
+You can do this by using the web shell provided. I go to the shell and enter my login details. After logging in I use
+the cd command and the directories provided to find the program I am asked to run:
+
+ $cd /problems/reversing-warmup-1_2_a237211c4be8902c67102f827027e633
+
+Once I'm in the right directory I use ls to see what is in it:
+
+ $ls
+
+I find a executable program called run and execute it using ./run which means execute this program in the current working
+directory:
+
+ $./run
+
+This gives me the flag: picoCTF{welc0m3_t0_r3VeRs1nG}

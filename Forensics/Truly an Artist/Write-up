@@ -1,0 +1,6 @@
+I am given a image and asked to find the flag with hints indicating to look in the metadata and to see who created the
+image. In this challenge i used exiftool to view the metadata:
+
+ $exiftool 2018.png
+
+This gave me the flag where the artists name is: picoCTF{look_in_image_9f5be995}

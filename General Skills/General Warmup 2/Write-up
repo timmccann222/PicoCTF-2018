@@ -1,0 +1,7 @@
+I am asked to convert the number 27 (base 10) to binary (base 2).
+
+I used an online converter for this:
+
+ https://www.rapidtables.com/convert/number/decimal-to-binary.html
+
+This gave me gave me the flag: picoCTF{11011}

@@ -1,0 +1,18 @@
+Like in GREP 1, I have to find the flag except this time there are multiple directories each with multiple text files
+that could hold the flag.
+
+I use grep with the parameters -rl, the string I'm looking forward and the path i want to go down:
+
+ $ grep -rl "pico" files/
+
+-r : (or --recursive) option is used to traverse also all sub-directories of /path
+
+-l : (or --files-with-matches) option is used to only print filenames of matching files, and not the matching lines
+
+This gives me the file path 'files/files6/file12'. I cd into files/files6/ and then cat file12 while also piping it into
+a grep command to retrieve the flag:
+
+ $cat file12 | grep pico
+
+This is the flag: picoCTF{grep_r_and_you_will_find_4baaece4}
+

@@ -1,0 +1,13 @@
+We are given a message from a friend, llkjmlmpadkkc with the key of thisisalilkey.
+
+I use an online tool to solve this rather than by hand:
+
+ https://geocaching.dennistreysa.de/multisolver/index.html
+
+
+This tool confirms that it is a Vignère cipher. It can also be considered a Larrabee cipher which is similar to the
+Vignère cipher but with the main difference that numbers can also be encoded. Since there are no numbers in this
+ciphertext a decoder for either will work.
+
+I obtained the following flag: picoCTF{secretmessage}
+

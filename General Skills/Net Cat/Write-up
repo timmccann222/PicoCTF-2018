@@ -1,0 +1,11 @@
+In this challenge I am asked to use the command netcat to connect to 2018shell3.picoctf.com at port 22847 to get the
+flag. Netcat is a computer networking utility for reading from and writing to network connections using TCP or UDP.
+
+To use netcat simply use nc followed by the address and then the port number:
+
+ $nc 2018shell3.picoctf.com 22847
+
+This gave me the flag: picoCTF{NEtcat_iS_a_NEcESSiTy_69222dcc}
+
+
+

@@ -1,0 +1,17 @@
+I am given a PNG image that has an error when I try to open it.
+
+I use the file command to check the image:
+
+ $file flag.png
+
+I see from the above output that it is actually a JPEG file but has been given a .png extension.
+
+To fix this I copy the flag.png file to a new flag.jpeg file:
+
+ $cp flag.png flag.jpg
+
+Now that the image has the correct file extension I can open it using the eog command:
+
+ $eog flag.jpg
+
+This gives me the flag: picoCTF{extensions_are_a_lie}

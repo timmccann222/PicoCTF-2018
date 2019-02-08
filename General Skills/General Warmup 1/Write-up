@@ -1,0 +1,12 @@
+I am asked to convert 0x41 from hexadecimal to ASCII.
+
+I used an online converter for this challenge, just enter 0x41 then hit convert:
+
+ https://www.rapidtables.com/convert/number/hex-to-ascii.html
+
+I also used an ASCII table to confirm my answer, just look through the table for the hex value 0x41 then look at the
+equivalent ASCII character:
+
+ http://www.asciitable.com/
+
+Both methods gave me the flag: picoCTF{A}
